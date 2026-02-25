@@ -1,0 +1,14 @@
+{
+  "networks": {
+    "base": {
+      "entryPoints": [
+        "0x0000000071727De22E5E9d8BAf0edAc6f37da032"
+      ],
+      "relayers": [
+        "0xa3f8c2e1b9d4057f6a2c8e3b1d9f4a7c5e2b8d1f3a6c9e2b5d8f1a4c7e0b3d6f"
+      ],
+      "beneficiary": "0x903FCD07562156C06fA7c3f6dA02C47424F426e5",
+      "rpcEndpoint": "https://base-mainnet.g.alchemy.com/v2/r1AhqmIsNCmLSntXfSuNx"
+    }
+  }
+}
