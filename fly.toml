@@ -6,7 +6,7 @@ primary_region = "iad"
    image = "etherspot/skandha:latest"
 #
  [processes]
-   app = "standalone --api.address 0.0.0.0 --api.port 14337 --unsafeMode"
+ app = "/bin/sh -c 'echo \"DEBUG MODE - Stable container\"; sleep infinity'"
 #
  [env]
   NODE_ENV = "production"
