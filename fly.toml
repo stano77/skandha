@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------------
+app = "skandha-base-v07"
+primary_region = "iad"
+#
+ [build]
+   image = "etherspot/skandha:latest"
+#
+ [processes]
+   app = "standalone --api.address 0.0.0.0 --api.port 14337 --unsafeMode"
+#
+ [env]
+  NODE_ENV = "production"
+#
+ [http_service]
+   internal_port = 14337
+   force_https = true
+   auto_stop_machines = "stop"
+   auto_start_machines = true
+   min_machines_running = 0
+   processes = ["app"]
+
+   [[http_service.checks]]
+     grace_period = "90s"
+     interval = "30s"
+     timeout = "30s"
+     method = "POST"
+     path = "/rpc"
+     protocol = "http"
+     body = '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
+
+ [[mounts]]
+   source = "skandha_config"
+   destination = "/usr/app"
+   processes = ["app"]
+ # ---------------------------------------------------------------------
